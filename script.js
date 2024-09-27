@@ -78,9 +78,9 @@ function convertUnits() {
     if (unitFrom === unitTo) {
         convertedValue = value; // No conversion needed
     } else if (unitFrom === 'length') {
-        convertedValue = value * conversionRates.length[unitTo] / conversionRates.length[unitFrom];
+        convertedValue = value * (conversionRates.length[unitTo] / conversionRates.length[unitFrom]);
     } else if (unitFrom === 'weight') {
-        convertedValue = value * conversionRates.weight[unitTo] / conversionRates.weight[unitFrom];
+        convertedValue = value * (conversionRates.weight[unitTo] / conversionRates.weight[unitFrom]);
     } else if (unitFrom === 'temperature') {
         if (unitFrom === 'celsius') {
             if (unitTo === 'fahrenheit') {
