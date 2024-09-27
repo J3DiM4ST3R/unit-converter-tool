@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit Converter Tool</title>
+    <title>Unit Converter</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,18 +14,16 @@
             <input type="number" id="value-input" placeholder="Enter value">
         </div>
         <div>
-            <label for="unit-from">Convert from:</label>
-            <select id="unit-from">
+            <label for="unit-from">From:</label>
+            <select id="unit-from" onchange="populateUnits()">
+                <option value="temperature">Temperature</option>
                 <option value="length">Length</option>
                 <option value="weight">Weight</option>
-                <option value="temperature">Temperature</option>
             </select>
         </div>
         <div>
-            <label for="unit-to">Convert to:</label>
-            <select id="unit-to">
-                <!-- Options will be populated based on selection -->
-            </select>
+            <label for="unit-to">To:</label>
+            <select id="unit-to"></select>
         </div>
         <button onclick="convertUnits()">Convert</button>
         <p id="result-message"></p>
