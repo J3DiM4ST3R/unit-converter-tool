@@ -74,14 +74,17 @@ function convertUnits() {
     }
 
     let convertedValue;
-    
+
     if (unitFrom === unitTo) {
         convertedValue = value; // No conversion needed
     } else if (unitFrom === 'length') {
+        // Length conversion
         convertedValue = value * (conversionRates.length[unitTo] / conversionRates.length[unitFrom]);
     } else if (unitFrom === 'weight') {
+        // Weight conversion
         convertedValue = value * (conversionRates.weight[unitTo] / conversionRates.weight[unitFrom]);
     } else if (unitFrom === 'temperature') {
+        // Temperature conversion
         if (unitFrom === 'celsius') {
             if (unitTo === 'fahrenheit') {
                 convertedValue = conversionRates.temperature.celsius.toFahrenheit(value);
